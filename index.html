@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Back Order Prediction</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Style.CSS') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Back Order Prediction </h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="national_inventory" id="national_inventory" placeholder="NATIONAL INVENTORY">
+            <input type="number" name="lead_time" id="lead_time" placeholder="LEAD TIME">
+            <input type="number" name="in_transit_qty" id="in_transit_qty" placeholder="IN TRANSIT QTY">
+            <input type="number" name="forecast_3_month_value" id="forecast_3_month_value" placeholder="3 MONTH FORCASTED VALUE">
+            <input type="number" name="sales_1_month" id="sales_1_month" placeholder="SALES 1 MONTH SALES">
+            <input type="number" name="sales_9_month" id="sales_9_month"placeholder="SALES 9 MONTH SALES">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
